@@ -43,7 +43,7 @@ class CustomFormatter(Formatter):
     ) -> str:
         dt: datetime = datetime.fromtimestamp(
             record.created,
-            tz=timezone("Asia/Dhaka"),
+            tz=timezone("Asia/Kolkata"),
         )
         return dt.strftime(datefmt)
 
@@ -109,7 +109,7 @@ if DATABASE_URL:
 UPSTREAM_REPO = (
     config_file.get("UPSTREAM_REPO", "")
     or os.getenv("UPSTREAM_REPO", "")
-    or "https://github.com/AeonOrg/Aeon-MLTB"
+    or "https://github.com/FORMYBOTAM/Aeon-MLTB"
 )
 
 UPSTREAM_BRANCH = (
@@ -125,8 +125,8 @@ if UPSTREAM_REPO:
     update = srun(
         [
             f"git init -q \
-                     && git config --global user.email e.anastayyar@gmail.com \
-                     && git config --global user.name mltb \
+                     && git config --global user.email laerypageq@gmail.com \
+                     && git config --global user.name FORMYBOTAM \
                      && git add . \
                      && git commit -sm update -q \
                      && git remote add origin {UPSTREAM_REPO} \
