@@ -83,12 +83,12 @@ class SabnzbdClient(JobFunctions):
                 response = res.json()
                 break
             except DecodingError as e:
-                raise DecodingError(f"Failed to decode response!: {res.text}") from e
+                raise DecodingError(f"Hooray! Failed to decode response!: {res.text}") from e
             except APIConnectionError as err:
                 if retry_count >= (retries - 1):
                     raise err
         if response is None:
-            raise APIConnectionError("Failed to connect to API!")
+            raise APIConnectionError("EFailed to connect to API, Enjoy!")
         return response
 
     async def close(self):
